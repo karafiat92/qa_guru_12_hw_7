@@ -11,7 +11,6 @@ public class ParametersTest {
     public void testAnnotated() {
         Allure.parameter("Регион", "Московская область");
         Allure.parameter("Город", "Москва");
-
     }
 
 }
