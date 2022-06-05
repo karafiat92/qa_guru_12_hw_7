@@ -5,6 +5,7 @@ import com.codeborne.selenide.WebDriverRunner;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.Allure;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.nio.charset.StandardCharsets;
@@ -23,20 +24,21 @@ public class LambdaStepTest {
             address = "https://github.com";
 
     @Test
+    @DisplayName("РџРѕРґС‚РІРµСЂР¶РґРµРЅРёРµ РёРјРµРЅРё РёС‰СЊСЋ СЃ РїРѕРјРѕС‰СЊСЋ Р»СЏРјР±РґС‹")
     public void testIssueNameLambda() {
         SelenideLogger.addListener("allure", new AllureSelenide());
-        step("Открываем главную страницу", () -> open(address));
-        step("Ищем репозиторий" + repository, () -> {
+        step("РћС‚РєСЂС‹РІР°РµРј РіР»Р°РІРЅСѓСЋ СЃС‚СЂР°РЅРёС†Сѓ", () -> open(address));
+        step("РёС‰РµРј СЂРµРїРѕР·РёС‚РѕСЂРёР№" + repository, () -> {
             searchInput.click();
             searchInput.sendKeys(repository);
             searchInput.submit();
         });
-        step("Переходим по ссылке репозитория", () -> $(linkText(repository)).click());
-        step("Кликаем на Issues", () -> $(partialLinkText("Issues")).click());
-        step("Проверяем, что существует Issues с названием " + issueName, () -> {
+        step("РџРµСЂРµС…РѕРґРёРј РїРѕ СЃСЃС‹Р»РєРµ СЂРµРїРѕР·РёС‚РѕСЂРёСЏ", () -> $(linkText(repository)).click());
+        step("РљР»РёРєР°РµРј РЅР° Issues", () -> $(partialLinkText("Issues")).click());
+        step("РџСЂРѕРІРµСЂСЏРµРј, С‡С‚Рѕ СЃСѓС‰РµСЃС‚РІСѓРµС‚ Issues СЃ РЅР°Р·РІР°РЅРёРµРј " + issueName, () -> {
             $(withText(issueName)).click();
             Allure.getLifecycle().addAttachment(
-                    "Исходники страницы",
+                    "РёСЃС…РѕРґРЅРёРєРё СЃС‚СЂР°РЅРёС†С‹",
                     "text/html",
                     "html",
                     WebDriverRunner.getWebDriver().getPageSource().getBytes(StandardCharsets.UTF_8));

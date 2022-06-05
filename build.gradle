@@ -22,16 +22,23 @@ dependencies {
 
 allure {
     report {
-        version.set("2.17.3") //������ Allure Report (https://github.com/allure-framework/allure2)
+        version.set("2.17.3")
     }
     adapter {
-        aspectjWeaver.set(true) // ��������� ��������� @Step
+        aspectjWeaver.set(true)
         frameworks {
             junit5 {
-                adapterVersion.set("2.17.3") //������ Allure JUnit5 (https://github.com/allure-framework/allure-java)
+                adapterVersion.set("2.17.3")
             }
         }
     }
+}
+
+compileJava {
+    options.encoding = 'UTF-8'
+}
+compileTestJava {
+    options.encoding = 'UTF-8'
 }
 
 test {

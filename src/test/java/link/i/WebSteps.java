@@ -19,29 +19,29 @@ public class WebSteps {
     SelenideElement searchInput = $(".header-search-input");
     String address = "https://github.com";
 
-    @Step("Открываем главную страницу")
+    @Step("РћС‚РєСЂС‹РІР°РµРј РіР»Р°РІРЅСѓСЋ СЃС‚СЂР°РЅРёС†Сѓ")
     public void openMainPage() {
         open(address);
     }
 
-    @Step("Ищем репозиторий {repo}")
+    @Step("РёС‰РµРј СЂРµРїРѕР·РёС‚РѕСЂРёР№ {repo}")
     public void searchForRepository(String repo) {
         searchInput.click();
         searchInput.sendKeys(repo);
         searchInput.submit();
     }
 
-    @Step("Переходим по ссылке репозитория {repo}")
+    @Step("РџРµСЂРµС…РѕРґРёРј РїРѕ СЃСЃС‹Р»РєРµ СЂРµРїРѕР·РёС‚РѕСЂРёСЏ {repo}")
     public void clickOnRepositoryLink(String repo) {
         $(linkText(repo)).click();
     }
 
-    @Step("Кликаем на Issues")
+    @Step("РљР»РёРєР°РµРј РЅР° Issues")
     public void openIssuesTab() {
         $(partialLinkText("Issues")).click();
     }
 
-    @Step("Проверяем, что существует Issues с названием {issueName}")
+    @Step("РџСЂРѕРІРµСЂСЏРµРј, С‡С‚Рѕ СЃСѓС‰РµСЃС‚РІСѓРµС‚ Issues СЃ РЅР°Р·РІР°РЅРёРµРј {issueName}")
     public void shouldSeeIssueWithName(String issueName) {
         $(withText(issueName)).shouldBe(Condition.visible);
         attachScreenshot();

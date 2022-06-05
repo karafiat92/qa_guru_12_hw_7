@@ -7,10 +7,10 @@ import org.junit.jupiter.api.Test;
 public class ParametersTest {
 
     @Test
-       @DisplayName("Мой любимый тест")
+       @DisplayName("РњРѕР№ Р»СЋР±РёРјС‹Р№ С‚РµСЃС‚")
     public void testAnnotated() {
-        Allure.parameter("Регион", "Московская область");
-        Allure.parameter("Город", "Москва");
+        Allure.parameter("Р РµРіРёРѕРЅ", "РњРѕСЃРєРѕРІСЃРєР°СЏ РѕР±Р»Р°СЃС‚СЊ");
+        Allure.parameter("Р“РѕСЂРѕРґ", "РњРѕСЃРєРІР°");
     }
 
 }

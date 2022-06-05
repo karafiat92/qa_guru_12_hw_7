@@ -2,9 +2,8 @@ package link.i;
 
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import static io.qameta.allure.Allure.step;
 
 public class AnnotatedStepTest {
 
@@ -12,6 +11,7 @@ public class AnnotatedStepTest {
             ISSUE_NAME = "Incorrect display of locator counters on the page";
 
     @Test
+    @DisplayName("Подтверждение имени ищью с помощью аннотаций")
     public void testIssueNameAnnotated() {
         SelenideLogger.addListener("allure", new AllureSelenide());
         WebSteps steps = new WebSteps();

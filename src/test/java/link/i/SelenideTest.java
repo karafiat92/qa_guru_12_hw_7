@@ -1,10 +1,10 @@
 package link.i;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selectors.withText;
@@ -20,6 +20,7 @@ public class SelenideTest {
             address = "https://github.com";
 
     @Test
+    @DisplayName("Подтверждение имени ищью с помощью селенида")
     public void testIssueNameSelenide() {
         SelenideLogger.addListener("allure", new AllureSelenide());
         open(address);

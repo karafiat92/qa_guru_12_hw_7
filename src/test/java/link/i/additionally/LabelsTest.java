@@ -13,9 +13,9 @@ public class LabelsTest {
     @Owner("karafiat")
     @Link(value = "Testing", url = "https://github.com")
     @Severity(SeverityLevel.BLOCKER)
-    @Feature("Задачи в репозитории")
-    @Story("Просмотр созданных задач в репозитории")
-    @DisplayName("Мой любимый тест")
+    @Feature("Р—Р°РґР°С‡Рё РІ СЂРµРїРѕР·РёС‚РѕСЂРёРё")
+    @Story("РџСЂРѕСЃРјРѕС‚СЂ СЃРѕР·РґР°РЅРЅС‹С… Р·Р°РґР°С‡ РІ СЂРµРїРѕР·РёС‚РѕСЂРёРё")
+    @DisplayName("РњРѕР№ Р»СЋР±РёРјС‹Р№ С‚РµСЃС‚")
 
     public void testAnnotated() {
     }
